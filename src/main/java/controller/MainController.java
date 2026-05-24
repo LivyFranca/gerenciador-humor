@@ -106,10 +106,24 @@ public class MainController {
         output.appendText("Humor: " + diaAtual.getHumor() + "\n");
         output.appendText("Produtividade: " + diaAtual.calcularProdutividade() + "%\n\n");
 
+
+        // contador de tarefas concluídas
+        int concluidas = 0;
+
+        for (Tarefa t : diaAtual.getTarefas()) {
+            if (t.isConcluida()) {
+                concluidas++;
+            }
+        }
+
+        output.appendText("Tarefas concluídas: "
+                + concluidas + "/" + diaAtual.getTarefas().size() + "\n\n");
+
         output.appendText("Tarefas:\n");
 
         for (Tarefa t : diaAtual.getTarefas()) {
-            output.appendText((t.isConcluida() ? "✔ " : "❌ ") + t.getDescricao() + "\n");
+            output.appendText((t.isConcluida() ? "✔ " : "❌ ")
+                    + t.getDescricao() + "\n");
         }
     }
 }
