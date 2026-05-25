@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.MainController"
+      spacing="10"
+      alignment="CENTER"
+      style="-fx-padding: 20;">
+
+    <Label text="Gerenciador de Rotina + Humor"/>
+
+    <TextField fx:id="txtDescricao"
+               promptText="Digite uma tarefa"/>
+
+    <Button text="Adicionar tarefa"
+            onAction="#adicionarTarefa"/>
+
+    <Label text="Humor do dia"/>
+
+    <HBox spacing="10" alignment="CENTER">
+
+        <Button text="😊"
+                onAction="#setFeliz"/>
+
+        <Button text="😐"
+                onAction="#setNeutro"/>
+
+        <Button text="😞"
+                onAction="#setTriste"/>
+
+    </HBox>
+
+    <ListView fx:id="listTarefas"
+              prefHeight="200"/>
+
+    <Button text="Finalizar dia"
+            onAction="#finalizarDia"/>
+
+    <TextArea fx:id="output"
+              prefHeight="150"
+              editable="false"/>
+
+</VBox>
